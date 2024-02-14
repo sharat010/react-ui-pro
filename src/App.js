@@ -1,20 +1,17 @@
-import React, { useRef } from 'react';
-import ChildCom from './component/ChildCom';
+import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomeCom from './component/HomeCom';
 
-const App = () => {
-  const childRef = useRef();
-
-  const getChildState = () => {
-    const childState = childRef?.current?.getChildState();
-    console.log('childState',childState);
-  };
-
+function App() {
   return (
-    <div>
-      <ChildCom  ref={childRef} onButtonClick={getChildState} />
-      {/* <button onClick={getChildState}>Get Child State</button> */}
+    <div className="App">
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<HomeCom/>} />
+      </Routes>
+      </BrowserRouter>
     </div>
   );
-};
+}
 
 export default App;
