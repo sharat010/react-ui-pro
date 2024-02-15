@@ -1,124 +1,111 @@
-import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import MobileStepper from '@mui/material/MobileStepper';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import { autoPlay } from 'react-swipeable-views-utils';
-import SwipeableViews from 'react-swipeable-views';
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import image1 from '../slider.png';
+import image2 from '../light.jpeg';
+// import './styles.css';
 
-const images = [
-  {
-    
-    imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-  {
-    imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-  {
-    imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250',
-  },
-  {
-    imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-];
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
 
-function SliderAft() {
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = images.length;
+export default function SliderAft() {
+  const [swiperRef, setSwiperRef] = useState(null);
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  let appendNumber = 4;
+  let prependNumber = 1;
+
+  const prepend2 = () => {
+    swiperRef.prependSlide([
+      '<div class="swiper-slide">Slide ' + --prependNumber + '</div>',
+      '<div class="swiper-slide">Slide ' + --prependNumber + '</div>',
+    ]);
   };
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  const prepend = () => {
+    swiperRef.prependSlide(
+      '<div class="swiper-slide">Slide ' + --prependNumber + '</div>'
+    );
   };
 
-  const handleStepChange = (step: Number) => {
-    setActiveStep(step);
+  const append = () => {
+    swiperRef.appendSlide(
+      '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>'
+    );
+  };
+
+  const append2 = () => {
+    swiperRef.appendSlide([
+      '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>',
+      '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>',
+    ]);
   };
 
   return (
-    <Box sx={{ maxWidth: 1600, flexGrow: 1 }}>
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          pl: 2,
-          bgcolor: 'background.default',
+    <>
+      <Swiper
+        onSwiper={setSwiperRef}
+        slidesPerView={3}
+        centeredSlides={true}
+        spaceBetween={30}
+        pagination={{
+          type: 'fraction',
         }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
       >
-        <Typography>{images[activeStep].label}</Typography>
-      </Paper>
-      <AutoPlaySwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
-        {images.map((step, index) => (
-          <div key={step.label}>
-            {Math.abs(activeStep - index) <= 2 ? (
-              <Box
-                component="img"
-                sx={{
-                  height: 300,
-                  display: 'block',
-                  maxWidth: 1600,
-                  overflow: 'hidden',
-                  width: '20%',
-                }}
-                src={step.imgPath}
-                alt={step.label}
-              />
-            ) : null}
-          </div>
-        ))}
-      </AutoPlaySwipeableViews>
-      {/* <MobileStepper
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-          >
-            Next
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-            Back
-          </Button>
-        }
-      /> */}
-    </Box>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image2}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image2}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image2}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image2}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image2}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image2}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image2}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image2}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image2}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image2}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+        <SwiperSlide><img src={image2}/></SwiperSlide>
+        <SwiperSlide><img src={image1}/></SwiperSlide>
+
+        
+        
+        
+      </Swiper>
+
+      {/* <p className="append-buttons">
+        <button onClick={() => prepend2()} className="prepend-2-slides">
+          Prepend 2 Slides
+        </button>
+        <button onClick={() => prepend()} className="prepend-slide">
+          Prepend Slide
+        </button>
+        <button onClick={() => append()} className="append-slide">
+          Append Slide
+        </button>
+        <button onClick={() => append2()} className="append-2-slides">
+          Append 2 Slides
+        </button>
+      </p> */}
+    </>
   );
 }
-
-export default SliderAft;

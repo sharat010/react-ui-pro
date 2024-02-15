@@ -1,6 +1,6 @@
 import { style } from "@mui/system";
 
-export const useStyles = style((theme) => ({
+export const Style = style((theme) => ({
   root: {
     margin: 0,
     padding: 0,
@@ -13,38 +13,36 @@ export const useStyles = style((theme) => ({
     },
   },
   container: {
-    width: "90%",
-    margin: "auto",
+    width: "97%",
+  margin: "auto",
   },
   header: {
     display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
+  justifyContent: "space-between",
+  alignItems: "center",
   },
-  searchContainer: {
+  search: {
     position: "relative",
-    color: "#aaa",
-    fontSize: "16px",
+  Color: "#aaa",
+  fontSize: "16px",
   },
   flex: {
     display: "flex",
   },
-  searchInput: {
-    width: "416px",
-    height: "46px",
-    border: "1px solid #aaa",
-    borderRadius: "10px",
-    margin: "10px 0px",
-    textIndent: "32px",
-    [theme.breakpoints.down("sm")]: {
-      width: "100%", // Adjust for smaller screens
-    },
+  search : {
+    "& input":{
+    width: "580px",
+  height: "35px",
+  border: "1px solid #aaa",
+  borderRadius: "10px",
+  margin: "10px 0px",
+  border: "1px solid #dacfcf"},
   },
-  searchIcon: {
-    position: "absolute",
-    top: "22px",
-    right: "10px",
-  },
+  search: {
+    "& input":{
+      textIndent: "42px",
+
+  },},
   btn: {
     padding: "8px 20px",
     // Add border-image styling
@@ -104,7 +102,7 @@ export const useStyles = style((theme) => ({
       margin: "1px",
       textIndent: "-999px",
       cursor: "pointer",
-    //   backgroundColor: "#000 \9",
+      //   backgroundColor: "#000 \9",
       backgroundColor: "rgba(0, 0, 0, 0)",
       border: "1px solid #fff",
       borderRadius: "10px",
@@ -122,4 +120,3 @@ export const useStyles = style((theme) => ({
     margin: "0 -25px",
   },
 }));
-

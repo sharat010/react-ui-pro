@@ -19,9 +19,9 @@ export default function TabButtons() {
     <Box sx={{ width: '100%', typography: 'body1' }}>
       <TabContext value={value}>
         <Box>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Item One" className='tabButton1'  value="1" />
-            <Tab label="Item Two" value="2" className='tabButton' />
+          <TabList onChange={handleChange} aria-label="lab API tabs example" className='tabs'>
+            <Tab label="Featured" className='tabButton1 border-img'  value="1" size={"small"} />
+            <Tab label="All" value="2" className='tabButton' size={"small"} />
           </TabList>
         </Box>
         <TabPanel value="1"><Slider/></TabPanel>

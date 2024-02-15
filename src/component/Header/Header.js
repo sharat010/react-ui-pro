@@ -1,19 +1,25 @@
-import { Box, Button, TextField, makeStyles } from "@material-ui/core";
+import { AppBar, Box, Button, TextField, Typography, makeStyles } from "@material-ui/core";
 import { Stack } from "@mui/system";
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import DeleteIcon from "@mui/icons-material/Delete";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-import logo from "../../logo.png";
+import logo from "../../logoimg.png";
+// import style from '../Header/makeStyle';
 const Header = () => {
-  const className = makeStyles();
 
   return (
     <Box>
       <Box className="header">
         <Box className="logo">
+         {/* <AppBar component={'nav'}> */}
+          {/* <Typography> */}
           <img src={logo} />
+          <a href="/">WaveMint</a>
+          {/* </Typography> */}
+         {/* </AppBar> */}
         </Box>
+       
         <Box class="list">
           <ul className="flex">
             <li>Explore</li>
@@ -28,26 +34,23 @@ const Header = () => {
         </Box>
         <Box>
           <Stack className="btn" spacing={2} direction="row">
-            <Button
-              className="btn"
-              id="borderimg"
-              variant="outlined"
-              size="large"
-            >
-              0.7517
-            </Button>
-            <Button
-              className="btn"
-              id="borderimg"
-              variant="outlined"
-              size="large"
-              startIcon={<DeleteIcon />}
-            >
-              0x73226e21178c0f
-            </Button>
+            <Box className="button1">
+            <Box className="btn-inner">
+            
+              <p> 0.7517</p>
+            </Box>
+            </Box>
+
+            <Box className="button1">
+            <Box className="btn-inner">
+            <AccountCircleIcon className="icon" />
+              <p> 0x73226e21178c0f</p>
+            </Box>
+            </Box>
             <Button className="btn border-img" variant="contained" size="large">
               Tokengate
             </Button>
+
           </Stack>
         </Box>
       </Box>
