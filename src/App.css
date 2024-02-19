@@ -3,10 +3,12 @@
   padding: 0px;
   font-family: Poppins, sans-serif !important;
 }
+
 .logo {
   display: flex;
   align-items: center;
 }
+
 .logo a {
   text-decoration: none;
   color: rgb(0, 0, 0);
@@ -15,27 +17,39 @@
   letter-spacing: 1.25px;
   margin: 10px 30px 10px 4px;
 }
+
 .logo img {
-  width: 100%;
   height: 35px;
   margin-top: 4px;
+}
+
+.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded {
+  top: 57px !important;
+}
+
+.MuiButton-containedSizeLarge {
+  padding: 12px 22px !important;
+  font-size: 0.9375rem;
 }
 
 .container {
   width: 96%;
   margin: auto;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
 }
+
 .search {
   position: relative;
   color: #aaa;
-  font-size: 16px;
+  font-size: 1rem;
 }
+
 .flex {
   display: flex;
 }
@@ -45,22 +59,19 @@
 }
 
 .search input {
-  width: 580px;
-  height: 35px;
-  border: 1px solid #aaa;
-  border-radius: 10px;
-  margin: 10px 0px;
-  border: 1px solid #dacfcf;
+  width: 468px;
+  border-radius: 24px !important;
 }
 
 .search input {
-  text-indent: 42px;
+  text-indent: 30px;
 }
+
 .search .search {
   position: absolute;
-  top: 22px;
-  right: 10px;
+  top: 16px;
 }
+
 .button1 {
   height: max-content;
   width: max-content;
@@ -80,7 +91,9 @@
   padding: 2px;
   overflow: hidden;
   user-select: none;
+  margin: 10px 10px;
 }
+
 .icon {
   background-image: linear-gradient(
     to right,
@@ -91,54 +104,105 @@
   border-radius: 18px;
   margin: 0px 4px;
 }
+
 .btn-inner {
-  /* position: relative; */
-  /* width: 100%; */
-  /* height: 100%; */
   padding: 12px 21px;
-  /* color: rgb(0, 0, 0); */
   background-color: white;
   border-radius: 13px;
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
-  /* -webkit-box-align: center; */
   align-items: center;
   user-select: none;
 }
+
 .btn-inner p {
   font-weight: 800;
   color: rgb(0, 0, 0);
   padding: 2px 10px;
 }
 .btn {
-  padding: 8px 20px;
-  /* margin: 10px 10px; */
-  border-image: url("./border.jpeg") 30 round;
+  padding: 8px 8px;
+  border-image: url("./images/border.jpeg") 30 round;
 }
-
 .borderimg {
   border: 3px solid red;
   border-radius: 25px;
-  border-image: url(border.jpeg) 2 round;
-}
-.border-img {
-  background-image: url("../src/download.jpeg");
-  background-position: 42% 43%;
-  border-radius: 10px !important;
+  border-image: url("./images/border.jpeg") 2 round;
 }
 .list li {
   list-style: none;
   padding: 11px 21px;
-  font-size: 16px;
+  font-size: 1rem;
   color: rgb(54, 56, 63);
   font-weight: 600;
+}
+.menu {
+  display: none;
+}
+.btn :hover {
+  background-image: url("./images/download.jpeg");
+  background-position: 40% 43%;
+  color: white;
+}
+@media screen and (max-width: 320px) {
+  .list,
+  .search,
+  .user {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: block;
+  }
+  .list,
+  .user {
+    display: none;
+  }
+  .search input {
+    width: 260px;
+  }
+  .tabs {
+    width: 40% !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .menu {
+    display: block;
+  }
+
+  .list,
+  .user {
+    display: none;
+  }
+
+  .tabs {
+    width: 24% !important;
+  }
+}
+
+@media (max-width: 992) {
+  .search {
+    display: block;
+  }
+
+  .list,
+  .user {
+    display: none;
+  }
 }
 
 .tab {
   background-color: #aaa;
   width: 150px;
 }
+
 .gredient {
   background-color: red;
   padding: 5px 10px;
@@ -150,6 +214,7 @@
 .all {
   padding: 0px 20px;
 }
+
 .search.search {
   left: 10px;
   right: auto;
@@ -182,8 +247,6 @@ img {
   top: 30px;
 }
 
-
-
 .carousel-control-prev {
   left: -50px;
   margin: 0 -25px;
@@ -193,22 +256,39 @@ img {
   right: -50px;
   margin: 0 -25px;
 }
+
 .tab {
   margin-bottom: 10px;
 }
+
+.MuiOutlinedInput-input {
+  padding: 14.5px 14px !important;
+}
+
 .tabs {
   width: 14%;
   border-radius: 8px;
-  background-color: rgb(223, 216, 216);
+  background-color: rgb(239, 239, 239);
   padding: 4px 4px;
 }
-.tabButton1 {
-  color: white !important;
-}
-.btn :hover {
-  background-image: url("../src/download.jpeg");
-  background-position: 40% 43%;
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  z-index: 99999;
   color: white;
+}
+
+.css-1aquho2-MuiTabs-indicator {
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  width: 100%;
+  -webkit-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 18px;
+  padding: 22px 0px;
+  background-image: url("./images/download.jpeg");
+  background-position: 42% 43%;
+  border-radius: 10px !important;
 }
 
 .swiper {
@@ -238,6 +318,7 @@ img {
   height: 300px;
   margin: 20px auto;
 }
+
 .append-buttons {
   text-align: center;
   margin-top: 20px;
@@ -250,18 +331,59 @@ img {
   color: #007aff;
   text-decoration: none;
   padding: 4px 10px;
-  border-radius: 4px;
+  border-radius: 8px;
   margin: 0 10px;
-  font-size: 13px;
+  font-size: 1.5rem;
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-  background-color: #363131;
-  padding: 20px;
-  border-radius: 50%;
-  height: 30px;
+  display: none !important;
 }
 
+.image-container {
+  position: relative;
+}
+
+.image-text {
+  position: absolute;
+  top: 2%;
+}
+
+.image-text img {
+  border-radius: 30px;
+  height: 178px;
+  transition: 0.25s linear;
+  width: 100%;
+}
+.slider-img{
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.slider-img:hover{
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+}
+/* /////////////// */
 
 
+.img-wrapper {  
+  width: 400px;
+  height: 400px;
+  overflow: hidden; 
+}
+
+.inner-img {
+  transition: 0.3s;
+}
+
+.inner-img:hover {
+  transform: scale(1.1);
+}
+
+/* Other styling elements, that are not necessary for the example */
+
+.img-wrapper {
+  display: inline-block;
+  box-sizing: border-box;
+}

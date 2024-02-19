@@ -1,17 +1,11 @@
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import image1 from '../slider.png';
-import image2 from '../light.jpeg';
-// import './styles.css';
-
-// import required modules
-import { Pagination, Navigation } from 'swiper/modules';
+import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import image1 from "../images/slider.png";
+import image2 from "../images/light.jpeg";
+import { Pagination, Navigation } from "swiper/modules";
 
 export default function SliderAft() {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -21,27 +15,27 @@ export default function SliderAft() {
 
   const prepend2 = () => {
     swiperRef.prependSlide([
-      '<div class="swiper-slide">Slide ' + --prependNumber + '</div>',
-      '<div class="swiper-slide">Slide ' + --prependNumber + '</div>',
+      '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
+      '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
     ]);
   };
 
   const prepend = () => {
     swiperRef.prependSlide(
-      '<div class="swiper-slide">Slide ' + --prependNumber + '</div>'
+      '<div class="swiper-slide">Slide ' + --prependNumber + "</div>"
     );
   };
 
   const append = () => {
     swiperRef.appendSlide(
-      '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>'
+      '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>"
     );
   };
 
   const append2 = () => {
     swiperRef.appendSlide([
-      '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>',
-      '<div class="swiper-slide">Slide ' + ++appendNumber + '</div>',
+      '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
+      '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
     ]);
   };
 
@@ -53,59 +47,30 @@ export default function SliderAft() {
         centeredSlides={true}
         spaceBetween={30}
         pagination={{
-          type: 'fraction',
+          type: "fraction",
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
+        loop={true}
         className="mySwiper"
       >
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image2}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image2}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image2}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image2}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image2}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image2}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image2}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image2}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image2}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image2}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-        <SwiperSlide><img src={image2}/></SwiperSlide>
-        <SwiperSlide><img src={image1}/></SwiperSlide>
-
-        
-        
-        
+        <SwiperSlide>
+          <img className="slider-img" src={image1} alt="Slide 1" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className="slider-img" src={image2} alt="Slide 2" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className="slider-img" src={image1} alt="Slide 1" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className="slider-img" src={image2} alt="Slide 2" />
+        </SwiperSlide>
       </Swiper>
 
-      {/* <p className="append-buttons">
-        <button onClick={() => prepend2()} className="prepend-2-slides">
-          Prepend 2 Slides
-        </button>
-        <button onClick={() => prepend()} className="prepend-slide">
-          Prepend Slide
-        </button>
-        <button onClick={() => append()} className="append-slide">
-          Append Slide
-        </button>
-        <button onClick={() => append2()} className="append-2-slides">
-          Append 2 Slides
-        </button>
-      </p> */}
+      <div class="img-wrapper">
+    <img class="inner-img" src="https://source.unsplash.com/random/401x401" width="400px" height="400px" />
+</div>
     </>
   );
 }

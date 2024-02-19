@@ -12,7 +12,6 @@ const HomeCom = () => {
       <Box className="container">
         <Header />
         <TabButtons/>
-        {/* <Slider/> */}
       </Box>
     </Box>
   );

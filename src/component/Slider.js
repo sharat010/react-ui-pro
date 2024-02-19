@@ -9,8 +9,9 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import { autoPlay } from 'react-swipeable-views-utils';
 import SwipeableViews from 'react-swipeable-views';
-import slider from '../light.jpeg';
-import slider2 from '../slider.png';
+import slider from '../images/light.jpeg';
+import slider2 from '../images/slider.png';
+import mokey from "../images/mokey.png";
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
@@ -46,7 +47,7 @@ function SwipeableTextMobileStepper() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleStepChange = (step: Number) => {
+  const handleStepChange = (step) => {
     setActiveStep(step);
   };
 
@@ -78,6 +79,7 @@ function SwipeableTextMobileStepper() {
             {Math.abs(activeStep - index) <= 2 ? (
               
               <Box
+              className='image-container'
                 component="img"
                 sx={{
                   height: 400,
@@ -85,6 +87,7 @@ function SwipeableTextMobileStepper() {
                   maxWidth: 1600,
                   overflow: 'hidden',
                   width: '100%',
+                  objectFit:"cover"
                 }}
                 src={step.imgPath}
                 alt={step.label}
@@ -92,8 +95,8 @@ function SwipeableTextMobileStepper() {
             ) : null}
           </div>
         ))}
+     
       </AutoPlaySwipeableViews>
-      
     </Box>
   );
 }
