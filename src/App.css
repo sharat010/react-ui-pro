@@ -59,7 +59,7 @@
 }
 
 .search input {
-  width: 468px;
+  width: 425px;
   border-radius: 24px !important;
 }
 
@@ -198,6 +198,16 @@
   }
 }
 
+@media (min-width: 993px) and (max-width: 1200) {
+  .search {
+    display: block;
+  }
+
+  .list,
+  .user {
+    display: none;
+  }
+}
 .tab {
   background-color: #aaa;
   width: 150px;
@@ -264,6 +274,10 @@ img {
 .MuiOutlinedInput-input {
   padding: 14.5px 14px !important;
 }
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: white !important;
+  font-weight: 900;
+}
 
 .tabs {
   width: 14%;
@@ -274,7 +288,6 @@ img {
 
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
   z-index: 99999;
-  color: white;
 }
 
 .css-1aquho2-MuiTabs-indicator {
@@ -359,6 +372,11 @@ img {
 .slider-img{
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
+  position: relative;
+}
+.slider-img .slider-inner{
+  position: absolute;
+  top: 2%;
 }
 .slider-img:hover{
   -webkit-transform: scale(1.08);
@@ -379,6 +397,7 @@ img {
 
 .inner-img:hover {
   transform: scale(1.1);
+  border-radius: 30px;
 }
 
 /* Other styling elements, that are not necessary for the example */
@@ -386,4 +405,5 @@ img {
 .img-wrapper {
   display: inline-block;
   box-sizing: border-box;
+  /* //border: 1px solid #000; */
 }

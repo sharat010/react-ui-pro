@@ -17,7 +17,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 import { Stack, style } from "@mui/system";
 import logo from "../../images/logoimg.png";
-// import { Style } from "./style";
+import { CustomBox } from "./style";
 // import { TextareaAutosize as BaseTextareaAutosize } from "@mui/base/TextareaAutosize";
 const Header = () => {
   const anchorPoints = ["left"];
@@ -106,7 +106,7 @@ const Header = () => {
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
           >
-            Explore
+            <b>Explore</b>
           </Button>
           <Menu
             id="basic-menu"
@@ -157,7 +157,7 @@ const Header = () => {
               variant="contained"
               size="large"
             >
-              Tokengate
+              <b>Tokengate</b>
             </Button>
           </Stack>
         </Box>

@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import image1 from "../images/slider.png";
 import image2 from "../images/light.jpeg";
+import mokey from "../images/mokey.png";
 import { Pagination, Navigation } from "swiper/modules";
 
 export default function SliderAft() {
@@ -56,6 +57,7 @@ export default function SliderAft() {
       >
         <SwiperSlide>
           <img className="slider-img" src={image1} alt="Slide 1" />
+          <img className="slider-inner" src={mokey} alt="slide-1" />
         </SwiperSlide>
         <SwiperSlide>
           <img className="slider-img" src={image2} alt="Slide 2" />
@@ -68,9 +70,7 @@ export default function SliderAft() {
         </SwiperSlide>
       </Swiper>
 
-      <div class="img-wrapper">
-    <img class="inner-img" src="https://source.unsplash.com/random/401x401" width="400px" height="400px" />
-</div>
+     
     </>
   );
 }
